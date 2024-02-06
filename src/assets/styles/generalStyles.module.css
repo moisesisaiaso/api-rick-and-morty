@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: ConcertOne;
+    src: url(../fonts/ConcertOne-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: RussoOne;
+    src: url(../fonts/RussoOne-Regular.ttf) format("truetype");
+}
+
+:root {
+    font-size: 16px;
+
+    --main-color: #7bb924;
+    --card-color: white;
+    --secundary-color: #1abed6;
+    --colorText-secundary: #8f8f90;
+}
+
+body {
+    font-family: RussoOne;
+    letter-spacing: 2px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 30rem auto 5rem;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    background-color: var(--main-color);
+}
