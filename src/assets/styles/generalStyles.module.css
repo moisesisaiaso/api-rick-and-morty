@@ -42,4 +42,5 @@ footer {
     align-items: center;
     font-size: 0.8rem;
     background-color: var(--main-color);
+    text-align: center;
 }

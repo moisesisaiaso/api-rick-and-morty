@@ -104,14 +104,14 @@
 .main__pagination {
     display: flex;
     justify-content: space-evenly;
-    column-gap: 1.5rem;
+    column-gap: 2rem;
     width: 50%;
     margin: 1rem 0;
 }
 
 button {
     all: unset;
-    width: 5rem;
+    width: 7rem;
     height: 1rem;
     padding: 0.5rem 0.5rem 0.7rem 0.5rem;
     background-color: var(--main-color);
@@ -125,4 +125,8 @@ button {
 
 button:active {
     box-shadow: none;
+}
+
+.main__h2 {
+    text-align: center;
 }

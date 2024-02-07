@@ -58,7 +58,7 @@ header {
 }
 
 .formContainer__form {
-    width: 70%;
+    width: 80%;
     height: 50%;
 }
 
@@ -92,9 +92,10 @@ header {
 
     .header__nav::after {
         content: "";
-        width: 4rem;
-        height: 3.5rem;
+        width: 3.5rem;
+        height: 4rem;
         background-image: url(../img/icons/menu-bar.png);
+        cursor: pointer;
     }
 
     .header__nav {
