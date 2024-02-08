@@ -1,7 +1,7 @@
 import mainStyles from "../assets/styles/mainStyles.module.css";
 
-export const CharacterCard = ({ character }) => {
-    const { image, name, status, species, gender, location, episode } = character;
+export const CharacterCard = ({ character, setId, setName }) => {
+    const { id, image, name, status, species, gender, location, episode } = character;
     const numberOfEpisodes = episode.length;
 
     let statusColor;
@@ -19,9 +19,15 @@ export const CharacterCard = ({ character }) => {
         };
     }
 
+    const handleDetail = () => {
+        console.log("presionado");
+        setId(id);
+        setName("");
+    };
+
     return (
         <>
-            <article className={mainStyles.cards__card}>
+            <article className={mainStyles.cards__card} onClick={handleDetail}>
                 <img src={image} alt="" className={mainStyles.card__img} loading="lazy" />
 
                 <div className={mainStyles.card__status}>

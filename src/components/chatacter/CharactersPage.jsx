@@ -25,6 +25,7 @@ export const CharactersPage = () => {
     /* estado de busqueda-por-nombre */
     const [name, setName] = useState();
     /* estados para filtros */
+    const [id, setId] = useState();
     const [status, setStatus] = useState();
     const [specie, setSpecie] = useState();
     const [gender, setGender] = useState();
@@ -35,7 +36,7 @@ export const CharactersPage = () => {
     const [exist, setExist] = useState(true);
 
     const handleAccess = async () => {
-        const result = await setAllCharacters(name, status, specie, gender, page);
+        const result = await setAllCharacters(id, name, status, specie, gender, page);
         const { isLoading, exist } = result;
 
         setExist(exist);
@@ -47,7 +48,7 @@ export const CharactersPage = () => {
         setBackground(randomBackground);
         handleAccess();
         setIsLoading(true);
-    }, [page, name, status, specie, gender]);
+    }, [page, name, status, specie, gender, id]);
 
     console.log(allCharacters);
 
@@ -58,7 +59,7 @@ export const CharactersPage = () => {
             <header className={headerStyles.container__header}>
                 <img src={background} alt="fondos" className={headerStyles.header__background} />
 
-                <FormCharacter setName={setName} setPage={setPage} />
+                <FormCharacter setName={setName} setPage={setPage} setId={setId} name={name} />
             </header>
 
             <main className={mainStyles.container__main}>
@@ -72,9 +73,20 @@ export const CharactersPage = () => {
                                 <Pagination info={allCharacters?.info} setPage={setPage} />
 
                                 <section className={mainStyles.main__cards}>
-                                    {allCharacters?.results.map((character) => (
-                                        <CharacterCard key={character.id} character={character} />
-                                    ))}
+                                    {Object.keys(allCharacters).length === 2 ? (
+                                        <>
+                                            {allCharacters?.results.map((character) => (
+                                                <CharacterCard
+                                                    key={character.id}
+                                                    character={character}
+                                                    setId={setId}
+                                                    setName={setName}
+                                                />
+                                            ))}
+                                        </>
+                                    ) : (
+                                        <CharacterCard character={allCharacters} setId={setId} />
+                                    )}
                                 </section>
                                 {/* paginación */}
                                 <Pagination info={allCharacters?.info} setPage={setPage} />

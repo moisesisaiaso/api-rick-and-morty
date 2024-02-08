@@ -18,7 +18,10 @@ export const Pagination = ({ info, setPage }) => {
 
     return (
         <>
-            <section className={mainStyles.main__pagination}>
+            <section
+                className={mainStyles.main__pagination}
+                style={info === undefined ? { display: "none" } : {}}
+            >
                 <button
                     className={mainStyles.Pagination__btnPrev}
                     onClick={() => handlePage("prev")}
