@@ -54,7 +54,6 @@
 .status__led {
     width: 14px;
     height: 14px;
-    background-color: rgb(38, 241, 38);
 
     border-radius: 90px;
 }
