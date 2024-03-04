@@ -127,7 +127,6 @@ header {
         justify-content: space-evenly;
         align-items: center;
         list-style: none;
-        color: black;
         position: absolute;
         z-index: 20;
         background-color: #d5d4d498;

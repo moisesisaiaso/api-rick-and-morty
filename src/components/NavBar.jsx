@@ -10,6 +10,7 @@ import headerStyles from "../assets/styles/headerStyles.module.css";
 import { useState } from "react";
 export const NavBar = () => {
     const [navList, setNavList] = useState(false);
+
     const onHandleOpenMenu = () => {
         setNavList(true);
     };
